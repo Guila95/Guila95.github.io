@@ -1,0 +1,75 @@
+﻿/* Style pour l'onglet actif de la galerie */
+.gallery-tab {
+    padding: 8px 16px;
+    cursor: pointer;
+    border-bottom: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.active-tab {
+    border-color: #2563EB; /* Correspond à 'border-blue-600' de Tailwind */
+    color: #2563EB;
+    font-weight: 600;
+}
+
+/* Style pour la Lightbox (aperçu d'image) */
+#lightbox {
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: opacity 0.3s ease-in-out;
+}
+
+    #lightbox img,
+    #lightbox video {
+        max-width: 90vw;
+        max-height: 90vh;
+    }
+
+/* DÉBUT DU BLOC DE CODE 1 : STYLES YOUTUBE */
+/* Ces règles forcent le lecteur vidéo à conserver un ratio 16:9 */
+.video-container {
+    position: relative;
+    padding-top: 56.25%; /* Hauteur = 9 / 16 = 56.25% de la largeur (ratio 16:9) */
+    height: 0;
+    overflow: hidden;
+}
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+/* Styles pour la barre de défilement des miniatures */
+#youtube-thumbnails {
+    display: flex;
+    overflow-x: auto; /* Permet le défilement horizontal */
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-bottom: 16px; /* Espace pour la barre de défilement */
+}
+
+.youtube-thumb {
+    cursor: pointer;
+    flex-shrink: 0; /* Empêche les images de se réduire */
+    width: 160px; /* Largeur de la miniature */
+    height: 90px; /* Hauteur (ratio 16:9) */
+    object-fit: cover;
+    margin-right: 12px;
+    border-radius: 8px;
+    border: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+    .youtube-thumb:hover {
+        transform: scale(1.05);
+        border-color: #93c5fd; /* Bleu clair au survol */
+    }
+
+.active-thumb {
+    border-color: #2563EB; /* Bleu vif pour la sélection */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* FIN DU BLOC DE CODE 1 : STYLES YOUTUBE */
